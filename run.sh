@@ -8,12 +8,8 @@ chmod 755 /run/dump1090-fa
 /etc/init.d/lighttpd start
 
 CUSTOM_OPTIONS=""
-if [ -n "${RECEIVER_LATITUDE}" ]; then
-  CUSTOM_OPTIONS="${CUSTOM_OPTIONS} --lat ${RECEIVER_LATITUDE}"
-fi
-
-if [ -n "${RECEIVER_LONGITUDE}" ]; then
-  CUSTOM_OPTIONS="${CUSTOM_OPTIONS} --lon ${RECEIVER_LONGITUDE}"
+if [ -n "${RECEIVER_LATITUDE}" ] && [ -n "${RECEIVER_LONGITUDE}" ]; then
+  CUSTOM_OPTIONS="${CUSTOM_OPTIONS} --lat ${RECEIVER_LATITUDE} --lon ${RECEIVER_LONGITUDE}"
 fi
 
 #start dump1090
