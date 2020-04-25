@@ -23,5 +23,4 @@ RUN apt update && apt install -y /dump1090-fa_*.deb
 COPY run.sh /run.sh
 RUN ["chmod", "+x", "/run.sh"]
 
-EXPOSE 80 30005
 ENTRYPOINT ["/run.sh"]
